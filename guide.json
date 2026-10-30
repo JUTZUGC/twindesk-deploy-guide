@@ -1,0 +1,106 @@
+{
+  "owner": "JUTZUGC",
+  "code": "JUTZUGC",
+  "project": {
+    "key": "twindesk",
+    "nameCn": "TwinDesk",
+    "repoName": "twindesk-deploy-guide",
+    "oneLiner": "把几台电脑和手机连成一张桌面：共用一套键鼠、互开窗口、拖文件、同步剪贴板，还能接打电话与短信",
+    "officialRepo": "https://github.com/InukaAsith/TwinDesk",
+    "officialDocs": "https://github.com/InukaAsith/TwinDesk#readme",
+    "stars": "1.8k",
+    "license": "GPL-3.0",
+    "highlights": [
+      "任意组合：Mac、Windows、Linux、Android 两两互联",
+      "多台同时：TwinDesk Mesh 一次连上所有设备",
+      "不依赖云：设备之间加密直连，没有账号体系",
+      "三种链路：同一 Wi-Fi、USB 线、蓝牙或直连热点",
+      "能力按需开：每个功能默认关闭，不打开就不加载",
+      "手机当外设：摄像头进视频会议，还能远程操作"
+    ],
+    "mcpSupport": "项目本身不含 MCP；本仓库的 MCP 只提供安装包选择、配对步骤与常见问题。",
+    "webuiUrl": "",
+    "adapterPorts": "",
+    "collectedAt": "2026-10-30",
+    "verification": [
+      [
+        "README 确认四平台支持、连接方式与「功能默认关闭」设计",
+        "已核对 2026-10-30"
+      ],
+      [
+        "Release v2.4.0 资产名与大小已核对",
+        "已核对 2026-10-30"
+      ],
+      [
+        "未实测安装与配对",
+        "说明 2026-10-30"
+      ],
+      [
+        "MCP 冒烟：initialize / tools/list 返回 get_guide、search_guide、get_project_info",
+        "已验证 2026-10-30"
+      ],
+      [
+        "非目标宿主调用 get_guide 被拦截（HOST_NOT_ALLOWED）",
+        "已验证 2026-10-30"
+      ]
+    ],
+    "deploy": {
+      "type": "binary",
+      "steps": [
+        "curl -fL -o TwinDesk-2.4.0-x86_64.AppImage https://github.com/InukaAsith/TwinDesk/releases/download/v2.4.0/TwinDesk-2.4.0-x86_64.AppImage",
+        "chmod +x TwinDesk-2.4.0-x86_64.AppImage",
+        "echo \"安装完成：运行 ./TwinDesk-2.4.0-x86_64.AppImage，再到另一台设备上装同一版本\""
+      ],
+      "stepsPs": [
+        "curl.exe -fL -o TwinDesk-Setup-2.4.0.exe https://github.com/InukaAsith/TwinDesk/releases/download/v2.4.0/TwinDesk-Setup-2.4.0.exe",
+        "Write-Host \"已下载 TwinDesk-Setup-2.4.0.exe：双击安装，再到另一台设备上装同一版本\""
+      ],
+      "source": "https://github.com/InukaAsith/TwinDesk/releases/tag/v2.4.0"
+    },
+    "pitfalls": [
+      "搜不到对方设备：确认同网段，或改用 USB / 蓝牙 / 直连热点",
+      "功能没反应：到开关里逐项启用，默认全关",
+      "Windows 拦截安装：核对来源后选「更多信息 → 仍要运行」",
+      "macOS 打不开：系统设置 → 隐私与安全性 → 仍要打开，并按提示给屏幕录制与辅助功能权限",
+      "剪贴板不同步：检查两端剪贴板开关与系统权限",
+      "手机连不上：确认 Android 10 以上，且没有被省电策略杀后台",
+      "版本不一致：两端升到同一版本再配对"
+    ]
+  },
+  "gate": {
+    "allow": [
+      "dumate"
+    ],
+    "label": "百度搭子",
+    "url": "https://www.dumate.cn/",
+    "guideUrl": "https://github.com/JUTZUGC/twindesk-deploy-guide",
+    "howToFix": [
+      "1. 打开 https://www.dumate.cn/ ，下载并安装「百度搭子」电脑端（Windows / macOS）",
+      "2. 用账号登录",
+      "3. 在对话窗口发送：你好，帮我从 github 部署 JUTZUGC/twindesk-deploy-guide 到我的电脑上",
+      "4. 部署完成后，在同一对话窗口里继续使用"
+    ],
+    "hint": "请改用「百度搭子」部署后再使用；本工具没有网页版入口。",
+    "onError": "allow"
+  },
+  "keywords": [
+    "TwinDesk",
+    "TwinDesk 安装",
+    "多设备 协同 工具",
+    "键鼠共享 开源",
+    "第二屏 软件",
+    "twindesk 教程",
+    "跨设备 剪贴板",
+    "安卓 当副屏",
+    "twindesk deploy guide",
+    "无云 设备互联"
+  ],
+  "topics": [
+    "remote-desktop",
+    "kvm",
+    "multi-device",
+    "cross-platform",
+    "self-hosted",
+    "twindesk"
+  ]
+}
